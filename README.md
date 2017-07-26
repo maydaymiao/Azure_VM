@@ -21,7 +21,8 @@
 sudo apt-get install mosquitto mosquitto-clients
 sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
 sudo apt-get update
-```，安装好后可以用mqtt.fx测试一下
+```
+安装好后可以用mqtt.fx测试一下
 
 ###<h3 id="1.2">1.2 Install Certbot for Let's Encrypt Certificates</h3>
 Let's Encrypt是一个免费提供SSL证书的服务，利用以下命令安装certbot。
@@ -39,7 +40,12 @@ sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d 
 ```
 
 ###<h3 id="1.4">1.4. Set up Certbot Automatic Renewals</h3>
-输入```sudo crontab -e```，会先让你选择编辑器，然后再最后一行输入```15 3 * * * certbot renew --noninteractive --post-hook "systemctl restart mosquitto"```。
+输入
+```
+sudo crontab -e
+```
+会先让你选择编辑器，然后再最后一行输入
+```15 3 * * * certbot renew --noninteractive --post-hook "systemctl restart mosquitto"```
 
 
 ###<h3 id="1.5">1.5 Configure MQTT Passwords</h3>
@@ -52,11 +58,19 @@ sudo nano /etc/mosquitto/conf.d/default.conf
 allow_anonymous false
 password_file /etc/mosquitto/passwd
 ```
-再继续输入命令：```sudo systemctl restart mosquitto```，现在可以再到mqtt.fx里测试一下。
+再继续输入命令：
+```
+sudo systemctl restart mosquitto
+```
+现在可以再到mqtt.fx里测试一下。
 
 
 ###<h3 id="1.6">1.6 Configure MQTT SSL</h3>
-继续编辑defalut.conf：```sudo nano /etc/mosquitto/conf.d/default.conf```，进去后再底部添加以下内容：
+继续编辑defalut.conf：
+```
+sudo nano /etc/mosquitto/conf.d/default.conf
+```
+进去后再底部添加以下内容：
 ```
 listener 1883 localhost
 
@@ -65,4 +79,7 @@ certfile /etc/letsencrypt/live/mqtt.example.com/cert.pem
 cafile /etc/letsencrypt/live/mqtt.example.com/chain.pem
 keyfile /etc/letsencrypt/live/mqtt.example.com/privkey.pem
 ```
-然后重启服务```sudo systemctl restart mosquitto```
+然后重启服务
+```
+sudo systemctl restart mosquitto
+```
