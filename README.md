@@ -59,6 +59,8 @@ sudo apt-get purge php5-fpm
 sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2
 sudo apt-get install nodejs
 sudo apt-get install npm
+sudo apt-get install nodejs-legacy
+
 ```
 
 <h3 id="2.2">2.2 Install freeboard</h3>
@@ -66,7 +68,6 @@ sudo apt-get install npm
 ```linux
 git clone https://github.com/maydaymiao/freeboard.git
 cd freeboard
-sudo apt install nodejs-legacy
 sudo npm -g install grunt
 sudo npm install -g grunt-cli
 npm install
