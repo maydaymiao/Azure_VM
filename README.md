@@ -60,7 +60,9 @@ sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
+
 <h3 id="2.2">2.2 Install freeboard</h3>
+
 ```linux
 git clone https://github.com/maydaymiao/freeboard.git
 cd freeboard
