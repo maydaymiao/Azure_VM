@@ -24,6 +24,7 @@ sudo apt-get update
 
 
 <h3 id="1.2">1.5 Configure MQTT Passwords</h3>
+
 ```linux
 sudo mosquitto_passwd -c /etc/mosquitto/passwd enter_your_username
 sudo nano /etc/mosquitto/conf.d/default.conf
