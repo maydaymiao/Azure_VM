@@ -16,9 +16,9 @@ Mosquitto完整教程参考：https://www.digitalocean.com/community/tutorials/h
 
 安装mosquitto: 
 ```linux
-sudo apt-get install mosquitto mosquitto-clients
 sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
 sudo apt-get update
+sudo apt-get install mosquitto mosquitto-clients
 ```
 安装好后可以用mqtt.fx测试一下
 
