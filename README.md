@@ -11,6 +11,8 @@
 
 ##<h2 id="1">1. Mosquitto</h2>
 ###<h3 id="1.1">1.1 Install Mosquitto</h3>
+Mosquitto完整教程参考：https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04 但是操作到Step 6最后的时候失败了，1883和8883端口服务都起不来，不知道原因。。所以下面教程忽略SSL/TLS<br>
+
 安装mosquitto: 
 ```linux
 sudo apt-get install mosquitto mosquitto-clients
