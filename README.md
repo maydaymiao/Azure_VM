@@ -34,14 +34,14 @@ sudo nano /etc/mosquitto/conf.d/default.conf
 ```linux
 allow_anonymous false
 password_file /etc/mosquitto/passwd
-```
-再继续输入命令：
-```linux
-sudo systemctl restart mosquitto
 
 listener 1883
 listener 9001
 protocol websockets
+```
+再继续输入命令重启服务，重启好试一下```netstat -tln | grep 1883```，如果服务起不来，再重启mosquitto：
+```linux
+sudo systemctl restart mosquitto
 ```
 现在可以再到mqtt.fx里测试一下。
 
