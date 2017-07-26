@@ -4,9 +4,10 @@
 ## **Catalogue**
 * [1. Mosquitto](#1)
     * [1.1. Install Mosquitto](#1.1)
-    * [1.2. Configure MQTT Passwords](#1.2)
-
-    
+    * [1.2. Configure MQTT Passwords & Websockets](#1.2)
+* [2. Freeboard](#1)
+    * [2.1. Install Apache2 & PHP & Nodejs & Npm](#2.1)
+    * [2.2. Install Freeboard](#2.2)
     
 
 <h2 id="1">1. Mosquitto</h2>
@@ -23,7 +24,7 @@ sudo apt-get update
 
 
 
-<h3 id="1.2">1.5 Configure MQTT Passwords</h3>
+<h3 id="1.2">1.5 Configure MQTT Passwords & Websockets</h3>
 
 ```linux
 sudo mosquitto_passwd -c /etc/mosquitto/passwd enter_your_username
@@ -37,7 +38,40 @@ password_file /etc/mosquitto/passwd
 再继续输入命令：
 ```linux
 sudo systemctl restart mosquitto
+
+listener 1883
+listener 9001
+protocol websockets
 ```
 现在可以再到mqtt.fx里测试一下。
+
+
+<h2 id="2">2. Freeboard</h2>
+<h3 id="2.1">2.1 Install Apache2 & PHP & Nodejs & Npm</h3>
+
+```linux
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php-7.0
+sudo apt-get update
+sudo apt-get purge php5-fpm
+sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2
+sudo apt-get install nodejs
+sudo apt-get install npm
+```
+<h3 id="2.2">2.2 Install freeboard</h3>
+```linux
+git clone https://github.com/maydaymiao/freeboard.git
+cd freeboard
+sudo apt install nodejs-legacy
+sudo npm -g install grunt
+sudo npm install -g grunt-cli
+npm install
+grunt
+sudo -s
+cd /var/www/html
+ln -s /home/maydaymiao/freeboard dashboard
+```
 
 
