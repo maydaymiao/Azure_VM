@@ -38,11 +38,11 @@ sudo ufw allow http
 sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d henkeliot.southeastasia.cloudapp.azure.com
 ```
 
-###<h3 id="1.3">1.4. Set up Certbot Automatic Renewals</h3>
+###<h3 id="1.4">1.4. Set up Certbot Automatic Renewals</h3>
 输入```sudo crontab -e```，会先让你选择编辑器，然后再最后一行输入```15 3 * * * certbot renew --noninteractive --post-hook "systemctl restart mosquitto"```。
 
 
-###<h3 id="1.3">1.5 Configure MQTT Passwords</h3>
+###<h3 id="1.5">1.5 Configure MQTT Passwords</h3>
 ```
 sudo mosquitto_passwd -c /etc/mosquitto/passwd enter_your_username
 sudo nano /etc/mosquitto/conf.d/default.conf
@@ -55,7 +55,7 @@ password_file /etc/mosquitto/passwd
 再继续输入命令：```sudo systemctl restart mosquitto```，现在可以再到mqtt.fx里测试一下。
 
 
-###<h3 id="1.3">1.6 Configure MQTT SSL</h3>
+###<h3 id="1.6">1.6 Configure MQTT SSL</h3>
 继续编辑defalut.conf：```sudo nano /etc/mosquitto/conf.d/default.conf```，进去后再底部添加以下内容：
 ```
 listener 1883 localhost
