@@ -5,7 +5,7 @@
 * [1. Mosquitto](#1)
     * [1.1. Install Mosquitto](#1.1)
     * [1.2. Configure MQTT Passwords & Websockets](#1.2)
-* [2. Freeboard](#1)
+* [2. Freeboard](#2)
     * [2.1. Install Apache2 & PHP & Nodejs & Npm](#2.1)
     * [2.2. Install Freeboard](#2.2)
     
