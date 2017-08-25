@@ -26,6 +26,7 @@ sudo apt-get install mosquitto mosquitto-clients
 
 <h3 id="1.2">1.5 Configure MQTT Passwords & Websockets</h3>
 
+注意：如果已有用户名和密码要追加用户的话，把下面的"-c"去掉即可，否则会覆盖：
 ```linux
 sudo mosquitto_passwd -c /etc/mosquitto/passwd enter_your_username
 sudo nano /etc/mosquitto/conf.d/default.conf
